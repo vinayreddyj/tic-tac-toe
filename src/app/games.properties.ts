@@ -1,0 +1,1 @@
+export const TIC_TAC = "tictactoe";

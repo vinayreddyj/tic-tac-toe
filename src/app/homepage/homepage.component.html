@@ -1,0 +1,10 @@
+<h1> </h1>
+<main *ngIf="start">
+    <section>
+        <figure>
+            <img src="./../../assets/images/Tic_tac_toe.svg.png" alt="tic-tac-toe">
+            <figcaption><button (click)="tictactoe()" class="btn btn-success"> Start Here </button></figcaption>
+        </figure>
+    </section>
+</main>
+<app-tictactoe [start]="start" [game]="game" (exitGame)="exit($event)"> </app-tictactoe>

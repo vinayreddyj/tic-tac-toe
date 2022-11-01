@@ -1,0 +1,13 @@
+<div *ngIf="!start && gameProp.TIC_TAC === game">
+    <!-- <p class="text-primary"> Select Player</p> -->
+    <button class="btn btn-dark btn-lg" id="player1"><strong> Player 1 : X </strong></button>
+    <button class = "btn btn-warning btn-lg" id="player2"><strong> Player 2 : O </strong></button><br>
+    <div *ngFor="let item of items; let i = index">
+        <input type="text" [(ngModel)]="item[0]" (click)="enterInput(item[0],0,i)" [disabled]="item[0]!=' '|| winner!=''"> 
+        <input type="text" [(ngModel)]="item[1]" (click)="enterInput(item[1],1,i)" [disabled]="item[1]!=' '|| winner!=''">
+        <input type="text" [(ngModel)]="item[2]" (click)="enterInput(item[2],2,i)" [disabled]="item[2]!=' '|| winner!=''">
+    </div>
+    <p *ngIf="winner">Winner {{winner}}</p>
+    <button (click)="exit()" class="btn btn-danger exitButton">Exit</button>
+    <button (click)="reset()" class="btn btn-success">Reset</button>
+</div>
